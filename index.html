@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>𝔾𝕃𝕆𝕎 𝕄𝔸𝔽𝕀𝔸 | Perfumería</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GLOW MAFIA</div>
+        <div class="search-container">
+            <input type="text" id="search" aria-label="Buscar fragancia" placeholder="Buscar fragancia...">
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="fade-in">𝔻𝕖𝕤𝕔𝕦𝕓𝕣𝕖 𝕝𝕒 𝕗𝕣𝕒𝕘𝕒𝕟𝕔𝕚𝕒 𝕢𝕦𝕖 𝕕𝕖𝕗𝕚𝕟𝕖 𝕥𝕦 𝕖𝕤𝕖𝕟𝕔𝕚𝕒</h1>
+        <button class="cta">𝑬𝑿𝑷𝑳𝑶𝑹𝑨𝑹 𝑪𝑶𝑳𝑬𝑪𝑪𝑰𝑶𝑵</button>
+    </header>
+
+    <main>
+        <!-- Menú de categorías -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="mostrarCategoria('ÁRABES', this)">PERFUMES ÁRABES</button>
+            <button class="tab-btn" onclick="mostrarCategoria('DE-DISEÑADOR', this)">PERFUMES DE DISEÑADOR</button>
+            <button class="tab-btn" onclick="mostrarCategoria('NICHO', this)">PERFUMES NICHO</button>
+            <button class="tab-btn" onclick="mostrarCategoria('MUJERES', this)">PERFUMES DE MUJERES</button>
+        </div>
+
+        <!-- Contenedor donde se inyectará el contenido -->
+        <!-- Este es el contenedor donde se cargan las tarjetas -->
+          <div id="contenido-perfumes">
+    <!-- Aquí se inyectan las tarjetas por JS -->
+          </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO
+   ========================================================================== */
+:root {
+  --principal-glow: #ff00cc;
+  --principal-hover: #d400a8;
+  --fondo-oscuro: #09090b;
+  --card-bg: #141417;
+  --texto-claro: #f4f4f5;
+  --transicion-estandar: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. ESTILOS GLOBALES
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-claro);
+  overflow-x: hidden; /* Evita que la página se mueva horizontalmente */
+}
+
+/* ==========================================================================
+   3. NAVEGACIÓN
+   ========================================================================== */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 2rem 5%;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--principal-glow);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 0, 204, 0.4);
+}
+
+.search-container input {
+  width: 250px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  border-radius: 20px;
+  color: white;
+  outline: none;
+  transition: var(--transicion-estandar);
+}
+
+.search-container input:focus {
+  width: 300px;
+  border-color: var(--principal-glow);
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.3);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.fade-in { animation: fadeIn 2s ease-in; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 15px 35px;
+  background: var(--principal-glow);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transicion-estandar);
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.6);
+}
+
+.cta:hover { 
+  background: var(--principal-hover); 
+  transform: scale(1.05); 
+  box-shadow: 0 0 30px rgba(255, 0, 204, 0.9);
+}
+
+/* ==========================================================================
+   5. TABS (CATEGORÍAS)
+   ========================================================================== */
+.tabs { 
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; /* Permitir que los botones bajen si no caben */
+  gap: 15px; 
+  margin: 40px 0; 
+}
+
+.tab-btn {
+  padding: 10px 25px;
+  background: transparent;
+  border: 1px solid rgba(255, 0, 204, 0.4);
+  color: var(--texto-claro);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transicion-estandar);
+}
+
+.tab-btn.active, 
+.tab-btn:hover { 
+  background: var(--principal-glow); 
+  color: white; 
+  border-color: var(--principal-glow);
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.5);
+}
+
+/* ==========================================================================
+   6. CONTENEDOR Y TARJETAS (CARDS)
+   ========================================================================== */
+#contenido-perfumes {
+  display: grid;
+  /* CAMBIO CLAVE AQUÍ: Usamos 1fr para que se adapte al ancho disponible */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid #222;
+  border-radius: 16px;
+  transition: var(--transicion-estandar);
+  cursor: pointer;
+  max-width: 100%; /* Evita que la tarjeta se salga */
+}
+
+.card:hover {
+  border-color: var(--principal-glow);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 0, 204, 0.25);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  max-height: 250px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.card h3 { 
+  margin: 5px 0; 
+  color: white; 
+  font-size: 1.3rem;
+  transition: var(--transicion-estandar);
+}
+
+/* ==========================================================================
+   7. ACORDES VISUALES
+   ========================================================================== */
+.acordes-container { margin: 15px 0; }
+
+.acorde-item { 
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 8px; 
+}
+
+.label { 
+  width: 70px; 
+  font-size: 0.65em; 
+  text-transform: uppercase; 
+  color: #aaa; 
+}
+
+.bar-bg { 
+  flex-grow: 1; 
+  height: 8px; 
+  background: #222; 
+  border-radius: 4px; 
+  overflow: hidden; 
+}
+
+.bar-fill { 
+  height: 100%; 
+  border-radius: 4px; 
+}
+
+/* ==========================================================================
+   8. BOTÓN WHATSAPP
+   ========================================================================== */
+.btn-whatsapp {
+  display: block;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #25d366;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: var(--transicion-estandar);
+}
+
+/* ==========================================================================
+   9. UTILIDADES Y RESPONSIVE (AGREGADO)
+   ========================================================================== */
+.hidden { display: none; }
+.visible { display: grid; animation: fadeIn 1s; }
+
+@media (max-width: 600px) {
+  .logo { font-size: 1.8rem; }
+  .search-container input { width: 80%; }
+  #contenido-perfumes { grid-template-columns: 1fr; padding: 10px; }
+  .hero { height: 60vh; }
+}
